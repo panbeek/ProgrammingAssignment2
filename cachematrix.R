@@ -1,7 +1,10 @@
-## Put comments here that give an overall description of what your
-## functions do
-
-## Write a short comment describing this function
+## makeCacheMatrix creates a "special" matrix, that makes it possible to store it's inverse
+## At creation the inverse matrix (sol) is initialized.
+## Functions:
+## - set: Stores the actual matrix
+## - get: Returns the actual matrix
+## - setsolution: Stores the inverse matrix
+## - getsolution: Returns the inverse matrix
 
 makeCacheMatrix <- function(x = matrix()) {
     sol <- matrix(ncol = ncol(x))
@@ -18,7 +21,11 @@ makeCacheMatrix <- function(x = matrix()) {
 
 }
 
-## Write a short comment describing this function
+## cacheSolve returns the inverse of a matrix
+## - If the inverse has been calculated before, and stored in the cache it just
+##   returns the inverse from cache
+## - If the inverse has not been stored yet, in calculates the inverse matrix using
+##   the funtion "solve"
 
 cacheSolve <- function(x, ...) {
     ## Return a matrix that is the inverse of 'x'
